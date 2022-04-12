@@ -95,7 +95,6 @@ module "eks-1" {
   enable_irsa                          = true
   create_eks                           = true
   /* region                               = "us-west-2" */
-  /* namespaces_list                      = ["onswitchenergy"] */
 
   tags = {
     owner           = var.owner
