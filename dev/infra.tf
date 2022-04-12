@@ -248,3 +248,28 @@ output "iam_roles_names" {
 }
 
 
+module "iam_policy" {
+  source      = "../aws/iam-policy"
+  name        = local.role_and_policy_name
+  path        = "/"
+  description = "${var.cluster_name}_policy_creation"
+
+  policy = local.iam_policy
+
+  aws_region = var.aws_region
+}
+
+output "iam_policy_arn" {
+  value = module.iam_policy.arn
+}
+
+output "iam_policy_name" {
+  value = module.iam_policy.name
+}
+
+resource "aws_iam_role_policy_attachment" "custom" {
+  count = length(module.iam_roles_with_oidc.this_iam_role_name)
+
+  role       = module.iam_roles_with_oidc.this_iam_role_name[count.index]
+  policy_arn = module.iam_policy.arn[count.index]
+}
