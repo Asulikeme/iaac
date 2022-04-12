@@ -17,3 +17,12 @@ variable "eks_version" {
 variable "owner" {
     default = "ops"
 }
+
+variable roles_and_policy {
+ type = list(map(string))
+ default = [{ name = "lb"}] 
+ }
+
+ variable iam_policy_extra_vars {
+  type = map(string)
+}

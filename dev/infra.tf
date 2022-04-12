@@ -217,5 +217,35 @@ resource "aws_security_group_rule" "port1" {
   cidr_blocks       = ["10.0.0.0/16"]
 }
 
+locals {
+  role_and_policy_name = [for i in var.roles_and_policy : "${var.cluster_name}-${i["name"]}"]
+  iam_policy           = [for i in var.roles_and_policy : templatefile("${path.module}/policies/${i["name"]}.json.tftpl", var.iam_policy_extra_vars)]
+}
+
+module "iam_roles_with_oidc" {
+  source = "../aws/oidc"
+
+  create_role = true
+  aws_partition = "aws"
+  role_name = local.role_and_policy_name
+
+  tags = {
+    owner           = var.owner
+    environment     = var.environment
+    Name            = "${var.eks_cluster_name}-lb-role-1"
+    component       = "iamrole"
+  }
+
+  provider_url = trimprefix(module.eks-1.eks_cluster_oidc_issuer_url, "https://")
+
+}
+
+output "iam_roles_arns" {
+  value = module.iam_roles_with_oidc.this_iam_role_arn
+}
+
+output "iam_roles_names" {
+  value = module.iam_roles_with_oidc.this_iam_role_name
+}
 
 
