@@ -1,3 +1,0 @@
-###
-## Portal Foundation Configuration
-#
