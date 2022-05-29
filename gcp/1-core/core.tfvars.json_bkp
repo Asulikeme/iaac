@@ -1,0 +1,40 @@
+{
+    "gcp_project_id": "cswg-sada",
+    "gcp_billing_account": "01FAB3-0B8119-829387",
+    "gcp_organization_id": "organizations/599749519700",
+    "gcp_proj_services_to_enable": [
+        "cloudresourcemanager.googleapis.com",
+        "cloudbilling.googleapis.com",
+        "iam.googleapis.com",
+        "compute.googleapis.com",
+        "serviceusage.googleapis.com",
+        "storage-api.googleapis.com",
+        "servicenetworking.googleapis.com",
+        "logging.googleapis.com",
+        "admin.googleapis.com",
+        "monitoring.googleapis.com",
+        "cloudidentity.googleapis.com",
+        "orgpolicy.googleapis.com",
+        "billingbudgets.googleapis.com"
+        "container.googleapis.com"
+    ],
+    "gcp_tf_svc_acc_org_iam_roles": [
+        "roles/billing.user",
+        "roles/compute.networkAdmin",
+        "roles/compute.xpnAdmin",
+        "roles/iam.securityAdmin",
+        "roles/storage.admin",
+        "roles/iam.serviceAccountAdmin",
+        "roles/logging.configWriter",
+        "roles/orgpolicy.policyAdmin",
+        "roles/resourcemanager.folderAdmin",
+        "roles/resourcemanager.projectCreator",
+        "roles/resourcemanager.projectIamAdmin",
+        "roles/resourcemanager.organizationViewer",
+        "roles/dns.admin",
+        "roles/browser"
+    ]
+}
+
+
+011214-739287-C9DC4C

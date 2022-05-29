@@ -1,0 +1,1 @@
+../../install_simple/controls/client.rb

@@ -1,0 +1,55 @@
+{
+    "gcp_organization_id": "organizations/425291474002",
+    "gcp_group_org_admins": "gcp-organization-admins@marsmelon.net",
+    "gcp_group_billing_admins": "gcp-billing-admins@marsmelon.net",
+    "gcp_group_security_admins": "gcp-security-admins@marsmelon.net",
+    "gcp_group_all_users": "gcp-org-users@marsmelon.net",
+    "gcp_org_boolean_policies_list": [
+        "constraints/compute.skipDefaultNetworkCreation",
+        "constraints/compute.disableGuestAttributesAccess",
+        "constraints/sql.restrictPublicIp",
+        "constraints/storage.uniformBucketLevelAccess"
+],
+    "gcp_org_level_folders": [
+        "billing",
+        "shared",
+        "prod",
+        "dev",
+        "qa",
+        "sit",
+        "sandbox",
+        "InfoSec",
+        "demo"
+    ],
+    "gcp_group_org_admins_org_iam_roles": [
+        "roles/resourcemanager.organizationAdmin",
+        "roles/iam.organizationRoleViewer",
+        "roles/resourcemanager.folderAdmin",
+        "roles/billing.admin",
+        "roles/resourcemanager.projectCreator",
+        "roles/monitoring.admin",
+        "roles/logging.viewer",
+        "roles/compute.admin",
+        "roles/storage.admin"
+    ],
+    "gcp_group_billing_admins_org_iam_roles": [
+        "roles/billing.viewer",
+        "roles/billing.costsManager",
+        "roles/monitoring.viewer",
+        "roles/logging.viewer",
+        "roles/viewer"
+    ],
+    "gcp_group_security_admins_org_iam_roles": [
+        "roles/orgpolicy.policyAdmin",
+        "roles/iam.securityReviewer",
+        "roles/iam.organizationRoleViewer",
+        "roles/resourcemanager.folderIamAdmin",
+        "roles/logging.privateLogViewer",
+        "roles/logging.configWriter",
+        "roles/compute.orgFirewallPolicyUser",
+        "roles/compute.orgSecurityPolicyUser"
+    ],
+    "gcp_group_all_users_org_iam_roles": [
+        "roles/resourcemanager.folderViewer"
+    ]
+}
